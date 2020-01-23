@@ -23,24 +23,22 @@
   color: #61dafb;
 }
 
-h1{
+h1 {
   color: red;
 }
 
-h2{
-  color: green}
+h2 {
+  color: green;
+}
 
-
-img{
+img {
   width: 75%;
   height: auto;
 }
 
-h4{
-    color: green;
+h4 {
+  color: green;
 }
-
-
 
 @keyframes App-logo-spin {
   from {
