@@ -1,16 +1,21 @@
 import React from "react";
 import "./App.css";
 import Picture from './components/picture'
+import styled from "styled-components";
 
+const HeaderStyle = styled.h1`
+  backgroud-color: black;
+`
 
-function App() {
+function App(props) {
   
   return (
     <div className="App">
-      <h1>Picture of the Day!!</h1>
+      <HeaderStyle>
+        <h1>Picture of the Day!!</h1>
+        </HeaderStyle>
       <div>
-      <Picture />
-      {/* <Date /> */}
+        <Picture />
       </div>
      
     </div>

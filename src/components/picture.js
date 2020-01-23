@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import  "../index.css"
 import "../App.css"
 import Info from './info'
+import Date from './date'
+import styled from "styled-components";
 
 function Picture(props) {
   const [photo, setPhoto] = useState([]);
-  const [date, setDate] = useState([]);
-  
+  // const [date, setDate] = useState(dateString)
   
   useEffect(() => {
     axios
@@ -21,11 +21,24 @@ function Picture(props) {
       });
   }, []);
   
+  const ImageStyle = styled.img`
+      width: 75%;
+      height: auto;
+  `
+  const DivContainer = styled.div`
+    align-content: center;
+    justify-content: center;
+    border: 5px dotted white;
+    background-color: black;
 
+  `
   return (
        
-    <div>
+    <DivContainer>
        
+       <Date
+        date={photo.date}
+       />
 
         <Info 
         title={photo.title}
@@ -34,9 +47,9 @@ function Picture(props) {
         copyright={photo.copyright}/>
 
 
-        <img src = {photo.hdurl}alt="Pic of the dAy"/>
+        <ImageStyle src = {photo.hdurl}alt="Pic of the dAy"></ImageStyle>
       
-    </div>
+    </DivContainer>
   )
 }
 
